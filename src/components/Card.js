@@ -6,7 +6,7 @@ import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 function Card() {
   return (
     <>
-    <section className='cadastro' id='cadastro' smooth>
+    <section className='cadastro' id='cadastro'>
     <div className='everything'>
     <div className='card-insc-container'>
         <h1>Quero ser Monay!</h1>

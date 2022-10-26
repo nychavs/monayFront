@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React from 'react'
 import '../styles/Doubts.css'
 import {HashLink as Link} from "react-router-hash-link";
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
@@ -8,7 +8,7 @@ function Doubts() {
   let controlador = 0
 
   function abreFecha(resposta){
-    if (controlador == 0){
+    if (controlador === 0){
         document.getElementById(resposta).style.height ="27vh"
       controlador = 1
       } 
@@ -20,7 +20,7 @@ function Doubts() {
   
   return (
     <>
-    <section class='doubts' id='doubts' smooth>
+    <section className='doubts' id='doubts'>
     <div className='doubts-container'>
         <h2>Dúvidas</h2>
         <h1>Ficou com alguma dúvida?</h1>

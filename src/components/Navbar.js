@@ -18,14 +18,13 @@ function Navbar(){
         setTheme(newTheme)
         // useForceUpdate()
     }   
-
+    
     const [openLinks, setOpenLinks] = useState(false);
-    const [fix, setFix] = useState(false);
-
     const toggleNavbar = () => {
         setOpenLinks(!openLinks);
     };
-
+    
+    const [fix, setFix] = useState(false);
     function setFixed(){
         if (window.scrollY >= 800){
             setFix(true)
@@ -36,12 +35,19 @@ function Navbar(){
     }
     window.addEventListener("scroll", setFixed)
 
+    console.log(window.location.pathname)
+    const [wind, setWind] = useState(false)
+    const windverify = () =>{
+        if ('/homeuser' == window.location.pathname)
+        setWind(true)
+    }
+
     return(
         <div className={ fix ? 'navbar fixed' : 'navbar'}  data-theme={theme}>
             <div className='leftSide' id={openLinks ? "open" : "close"}>
                 <img src={theme === 'dark' ? Logo : LogoWhite} alt='logo' />
                 <div className="hiddenLinks">
-                    <Link to="/">Página Inicial</Link>
+                    <Link to="/#home">Página Inicial</Link>
                     <Link to='/#services'>Serviços</Link>
                     <Link to="/sobre">Sobre nós</Link>
                     <Link to="/#doubts">Dúvidas</Link>
@@ -49,12 +55,12 @@ function Navbar(){
                     <Link to="/login">Login</Link>
             </div>
             <div className='rightSide'>
-                <Link to="/">Página Inicial</Link>
+                <Link to="/#home">Página Inicial</Link>
                 <Link to='/#services'>Serviços</Link>
                 <Link to="/sobre">Sobre nós</Link>
                 <Link to="/#doubts">Dúvidas</Link>
                 <Link to="/#cadastro">Quero Meu Cartão</Link>
-                <Link to="/login">Login</Link>
+                <Link to="/homeuser">Login</Link>
                 <button onClick={toggleNavbar}>
                     <ReorderIcon />
                 </button>

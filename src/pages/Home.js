@@ -1,6 +1,6 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import BannerImage from '../assets/cortada2.png';
-import { Link } from 'react-router-dom';
+import { Link, useLocation  } from 'react-router-dom';
 import '../styles/Home.css';
 import Cat from '../assets/cat.jpg';
 import Doubts from '../components/Doubts'
@@ -11,9 +11,28 @@ import CardHeader from '../components/CardHeader.js';
 function Home() {
 // let colorTheme = localStorage.getItem('dark');
 // console.log(colorTheme);
+const { pathname, hash, key } = useLocation();
+
+useEffect(() => {
+  // if not a hash link, scroll to top
+  if (hash === '') {
+    window.scrollTo(0, 0);
+  }
+  // else scroll to id
+  else {
+    setTimeout(() => {
+      const id = hash.replace('#', '');
+      const element = document.getElementById(id);
+      if (element) {
+        element.scrollIntoView();
+      }
+    }, 0);
+  }
+}, [pathname, hash, key]); // do this on route change
+
   return (
     <>
-    <section className='home' id='home' smooth>
+    <section className='home' id='home'>
     <div className='home' style={{ backgroundImage: `url(${BannerImage}`}}>
       <div className="banner_info">
         <div className='cardHeaderPosition' >
@@ -63,11 +82,11 @@ function Home() {
       </div>
     </div>
       <div className='button'>
-        <Link to="/#cadastro">Quero ser Monay também!</Link>
+        <Link to="#cadastro">Quero ser Monay também!</Link>
       </div>
     </div>
     
-    <section classname='services' id='services' smooth>
+    <section className='services' id='services'>
     <div className='services-container'>
       <h1>Serviços do Monay exclusivos pra você!</h1>
 

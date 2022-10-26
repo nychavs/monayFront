@@ -1,0 +1,41 @@
+.menu {
+    width: 10vw;
+    background-color: #1F83BD;
+    color: white;
+}
+#opc1 {
+    height: 0;
+    overflow: hidden;
+    background-color: rgb(208, 223, 237);
+    color: #1F83BD;
+}
+#opc2 {
+    height: 0;
+    overflow: hidden;
+    background-color: rgb(208, 223, 237);
+    color: #1F83BD;
+}
+#opc3 {
+    height: 0;
+    overflow: hidden;
+    background-color: rgb(208, 223, 237);
+    color: #1F83BD;
+}
+#opc4 {
+    height: 0;
+    overflow: hidden;
+    background-color: rgb(208, 223, 237);
+    color: #1F83BD;
+}
+#opc5 {
+    height: 0;
+    overflow: hidden;
+    background-color: rgb(208, 223, 237);
+    color: #1F83BD;
+}
+#opc6 {
+    height: 0;
+    background-color: rgb(208, 223, 237);
+    color: #1F83BD;
+    overflow: hidden;
+}
